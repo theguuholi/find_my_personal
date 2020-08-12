@@ -10,7 +10,15 @@ addons:
 
 services:
   - postgresql
-
+  - docker
+env:
+  global:
+    - GCP_PROJECT_ID=propane-atrium-285212
+    - IMAGE=gcr.io/propane-atrium-285212/find_my_personal
+    - CLOUD_RUN_SERVICE=propane-atrium-285212
+    - CLOUR_RUN_REGION=us-central1
+    - CLOUDSDK_CORE_DISABLE_PROMPTS=1
+    - SHA=$(git rev-parse HEAD)
 script:
   - mix format --check-formatted --dry-run
   - mix credo --strict
