@@ -32,7 +32,7 @@ defmodule FindMyPersonalWeb.TeacherController do
 
   def edit(conn, %{"id" => id}) do
     teacher = Teachers.get_teacher!(id)
-    changeset = Teachers.change_teacher(%Teacher{})
+    changeset = Teachers.change_teacher(teacher)
     render(conn, "edit.html", teacher: teacher, changeset: changeset)
   end
 
