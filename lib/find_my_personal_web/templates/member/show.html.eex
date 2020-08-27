@@ -1,38 +1,49 @@
-<h1>Show Member</h1>
+<div class="card">
+  <div class="card-image waves-effect waves-block waves-light">
+    <img class="activator"
+      src="https://images.unsplash.com/photo-1542018917221-b84272ff5462?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60">
+  </div>
+  <div class="card-content">
+    <span class="card-title activator grey-text text-darken-4"><%= @member.name %><i
+        class="material-icons right">more_vert</i></span>
+    <p><a href="#">Saiba Mais</a></p>
+  </div>
+  <div class="card-reveal">
+    <span class="card-title grey-text text-darken-4">
+      <%= @member.name %> - <%= FindMyPersonal.Utils.age(@member.birth_date) %> Anos
+      <i class="material-icons right">close</i>
+    </span>
+    <p>
+      <strong>Email:</strong>
+      <div class="chip green white-text">
+        <%= @member.email %>
+      </div>
+    </p>
 
-<ul>
+    <p><strong>Data de Nascimento: </strong>
+      <%= FindMyPersonal.Utils.convert_br(@member.birth_date) %></p>
+    <p>
+      <strong>Tipo Sanguineo:</strong>
+      <div class="chip red white-text">
+        <%= @member.blood %>
+      </div>
+    </p>
 
-  <li>
-    <strong>Name:</strong>
-    <%= @member.name %>
-  </li>
+    <p>
+      <strong>Altura:</strong>
+      <%= @member.height %>
+    </p>
 
-  <li>
-    <strong>Email:</strong>
-    <%= @member.email %>
-  </li>
+    <p>
+      <strong>Peso:</strong>
+      <%= @member.weight %>
+    </p>
+    </p>
+  </div>
+</div>
 
-  <li>
-    <strong>Birth date:</strong>
-    <%= @member.birth_date %>
-  </li>
-
-  <li>
-    <strong>Blood:</strong>
-    <%= @member.blood %>
-  </li>
-
-  <li>
-    <strong>Height:</strong>
-    <%= @member.height %>
-  </li>
-
-  <li>
-    <strong>Weight:</strong>
-    <%= @member.weight %>
-  </li>
-
-</ul>
-
-<span><%= link "Edit", to: Routes.member_path(@conn, :edit, @member) %></span>
-<span><%= link "Back", to: Routes.member_path(@conn, :index) %></span>
+<%= link "Back", to: Routes.member_path(@conn, :index), class:
+"waves-effect waves-light btn-large black" %>
+<%= link "Edit", to: Routes.member_path(@conn, :edit, @member) ,
+class: "waves-effect waves-light btn-large green right" %>
+<div class="row"></div>
