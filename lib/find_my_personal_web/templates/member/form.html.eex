@@ -9,7 +9,8 @@
   <div class="input-field col s12">
     <%= text_input f, :name, class: "validate" %>
     <%= label f, :name %>
-    <span class="helper-text" data-error="wrong" data-success="right"><%= error_tag f, :name %></span>
+    <span class="helper-text" data-error="wrong"
+    data-success="right"><%= error_tag f, :name %></span>
   </div>
 </div>
 
@@ -35,7 +36,8 @@
         ["A+", "A-","B+","B-","AB+","AB-","O+","O-"],
           prompt: "Tipo Sanguineo" %>
     <%= label f, :blood %>
-    <span class="helper-text" data-error="wrong" data-success="right"><%= error_tag f, :blood %></span>
+    <span class="helper-text" data-error="wrong" data-success="right">
+    <%= error_tag f, :blood %></span>
   </div>
 </div>
 
@@ -43,7 +45,8 @@
   <div class="input-field col s12">
     <%= number_input f, :height, class: "validate", placeholder: "Altura em (cm)" %>
     <%= label f, :height %>
-    <span class="helper-text" data-error="wrong" data-success="right"><%= error_tag f, :height %></span>
+    <span class="helper-text" data-error="wrong" data-success="right">
+    <%= error_tag f, :height %></span>
   </div>
 </div>
 
@@ -51,7 +54,8 @@
   <div class="input-field col s12">
     <%= number_input f, :weight, class: "validate", placeholder: "Peso em (kg)" %>
     <%= label f, :weight %>
-    <span class="helper-text" data-error="wrong" data-success="right"><%= error_tag f, :weight %></span>
+    <span class="helper-text" data-error="wrong" data-success="right"><
+      %= error_tag f, :weight %></span>
   </div>
 </div>
 

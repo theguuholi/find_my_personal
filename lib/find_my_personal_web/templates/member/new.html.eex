@@ -2,6 +2,7 @@
 
 <%= render "form.html", Map.put(assigns, :action, Routes.member_path(@conn, :create)) %>
 
-<%= link "Back", to: Routes.member_path(@conn, :index), class: "waves-effect waves-light btn-large black" %>
+<%= link "Back", to: Routes.member_path(@conn, :index),
+class: "waves-effect waves-light btn-large black" %>
 
 <div class="row"></div>
