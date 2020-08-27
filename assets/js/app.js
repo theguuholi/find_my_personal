@@ -7,7 +7,11 @@ import "materialize-css";
 document.addEventListener('DOMContentLoaded', function () {
   var elems = document.querySelectorAll('.sidenav');
   M.Sidenav.init(elems, {});
+
+  var elems = document.querySelectorAll('.datepicker');
+  M.Datepicker.init(elems, {});
 });
+
 
 // webpack automatically bundles all modules in your
 // entry points. Those entry points can be configured

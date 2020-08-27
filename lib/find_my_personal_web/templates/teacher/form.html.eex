@@ -5,26 +5,50 @@
 </div>
 <% end %>
 
-<%= label f, :avatar_url %>
-<%= url_input f, :avatar_url %>
-<%= error_tag f, :avatar_url %>
 
-<%= label f, :name %>
-<%= text_input f, :name %>
-<%= error_tag f, :name %>
+<div class="row">
+  <div class="input-field col s12">
+    <%= url_input f, :avatar_url, class: "validate" %>
+    <%= label f, :avatar_url %>
+    <span class="helper-text" data-error="wrong" data-success="right"><%= error_tag f, :avatar_url %></span>
+  </div>
+</div>
 
-<%= label f, :birth_date %>
-<%= date_input f, :birth_date %>
-<%= error_tag f, :birth_date %>
+<div class="row">
+  <div class="input-field col s12">
+    <%= text_input f, :name, class: "validate" %>
+    <%= label f, :name %>
+    <span class="helper-text" data-error="wrong" data-success="right"><%= error_tag f, :name %></span>
+  </div>
+</div>
 
-<%= label f, :education_level %>
-<%= select f, :education_level, ["Ensino Médio Completo", "Ensino Superior Completo"," Mestrado","Doutorado"],
-prompt: "Escolha a Graduacao" %>
-<%= error_tag f, :education_level %>
 
-<%= label f, :class_type %>
-<%= text_input f, :class_type %>
-<%= error_tag f, :class_type %>
+<div class="row">
+  <div class="input-field col s12">
+    <%= date_input f, :birth_date, class: "validate" %>
+    <%= label f, :birth_date %>
+    <span class="helper-text" data-error="wrong" data-success="right"><%= error_tag f, :birth_date %></span>
+  </div>
+</div>
+
+<div class="row">
+  <div class="input-field col s12">
+    <%= select f, :education_level,
+        ["Ensino Médio Completo", "Ensino Superior Completo"," Mestrado","Doutorado"],
+          prompt: "Escolha a Graduacao" %>
+    <%= label f, :education_level %>
+    <span class="helper-text" data-error="wrong" data-success="right"><%= error_tag f, :education_level %></span>
+  </div>
+</div>
+
+<div class="row">
+  <div class="input-field col s12">
+    <%= text_input f, :class_type, class: "validate" %>
+    <%= label f, :class_type %>
+    <span class="helper-text" data-error="wrong" data-success="right"><%= error_tag f, :class_type %></span>
+  </div>
+</div>
+
 
 <div>
   <%= submit "Save" %>

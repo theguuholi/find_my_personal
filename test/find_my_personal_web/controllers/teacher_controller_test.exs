@@ -33,7 +33,7 @@ defmodule FindMyPersonalWeb.TeacherControllerTest do
   describe "index" do
     test "lists all teacher", %{conn: conn} do
       conn = get(conn, Routes.teacher_path(conn, :index))
-      assert html_response(conn, 200) =~ "Name"
+      assert html_response(conn, 200) =~ "Instrutores"
     end
   end
 
