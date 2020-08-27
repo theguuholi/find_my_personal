@@ -19,6 +19,7 @@ defmodule FindMyPersonalWeb.TeacherController do
   end
 
   def create(conn, %{"teacher" => teacher_params}) do
+    IO.inspect teacher_params
     case Teachers.create_teacher(teacher_params) do
       {:ok, teacher} ->
         conn

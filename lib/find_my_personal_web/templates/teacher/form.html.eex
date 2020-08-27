@@ -50,7 +50,7 @@
 </div>
 
 
-<div>
-  <%= submit "Save" %>
-</div>
+<%= submit class: "waves-effect waves-light btn-large blue right" do %>
+<i class="material-icons right">send</i>Save</a>
+<% end %>
 <% end %>
