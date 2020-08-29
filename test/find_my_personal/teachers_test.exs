@@ -42,6 +42,11 @@ defmodule FindMyPersonal.TeachersTest do
       assert Teachers.list_teacher() == [teacher]
     end
 
+    test "list_teacher/1 using filters" do
+      teacher_fixture()
+      assert Teachers.list_teacher("fsdfsdfds") == []
+    end
+
     test "get_teacher!/1 returns the teacher with given id" do
       teacher = teacher_fixture()
       assert Teachers.get_teacher!(teacher.id) == teacher
@@ -57,7 +62,9 @@ defmodule FindMyPersonal.TeachersTest do
     end
 
     test "create_teacher/1 with invalid data returns error changeset" do
-      assert {:error, %Ecto.Changeset{}} = Teachers.create_teacher(@invalid_attrs)
+      assert {:error, %Ecto.Changeset{} = changeset} = Teachers.create_teacher(@invalid_attrs)
+      assert "can't be blank" in errors_on(changeset).name
+      assert %{name: ["can't be blank"]} = errors_on(changeset)
     end
 
     test "update_teacher/2 with valid data updates the teacher" do

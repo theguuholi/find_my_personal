@@ -22,6 +22,20 @@ defmodule FindMyPersonal.Members do
   end
 
   @doc """
+  Returns the list of teacher.
+
+  ## Examples
+
+      iex> list_teacher("test")
+      [%Teacher{}, ...]
+
+  """
+  def list_members(filter) do
+    filter = "%#{filter}%"
+    Repo.all(from t in Member, where: ilike(t.name, ^filter))
+  end
+
+  @doc """
   Gets a single member.
 
   Raises `Ecto.NoResultsError` if the Member does not exist.

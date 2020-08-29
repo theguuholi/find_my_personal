@@ -15,27 +15,27 @@ defmodule FindMyPersonalWeb.ChannelCase do
   this option is not recommended for other databases.
   """
 
-  use ExUnit.CaseTemplate
-  alias Ecto.Adapters.SQL.Sandbox
+  # use ExUnit.CaseTemplate
+  # alias Ecto.Adapters.SQL.Sandbox
 
-  using do
-    quote do
-      # Import conveniences for testing with channels
-      import Phoenix.ChannelTest
-      import FindMyPersonalWeb.ChannelCase
+  # using do
+  #   quote do
+  #     # Import conveniences for testing with channels
+  #     import Phoenix.ChannelTest
+  #     import FindMyPersonalWeb.ChannelCase
 
-      # The default endpoint for testing
-      @endpoint FindMyPersonalWeb.Endpoint
-    end
-  end
+  #     # The default endpoint for testing
+  #     @endpoint FindMyPersonalWeb.Endpoint
+  #   end
+  # end
 
-  setup tags do
-    :ok = Sandbox.checkout(FindMyPersonal.Repo)
+  # setup tags do
+  #   :ok = Sandbox.checkout(FindMyPersonal.Repo)
 
-    unless tags[:async] do
-      Sandbox.mode(FindMyPersonal.Repo, {:shared, self()})
-    end
+  #   unless tags[:async] do
+  #     Sandbox.mode(FindMyPersonal.Repo, {:shared, self()})
+  #   end
 
-    :ok
-  end
+  #   :ok
+  # end
 end
