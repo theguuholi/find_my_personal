@@ -43,6 +43,12 @@ defmodule FindMyPersonalWeb.TeacherControllerTest do
   end
 
   describe "create teacher" do
+
+    test "renders form", %{conn: conn} do
+      conn = get(conn, Routes.teacher_path(conn, :new))
+      assert html_response(conn, 200) =~ "New Teacher"
+    end
+
     test "redirects to show when data is valid", %{conn: conn} do
       conn = post(conn, Routes.teacher_path(conn, :create), teacher: @create_attrs)
 
