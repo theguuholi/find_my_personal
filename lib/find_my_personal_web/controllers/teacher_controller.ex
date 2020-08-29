@@ -8,8 +8,8 @@ defmodule FindMyPersonalWeb.TeacherController do
     render(conn, "index.html", teachers: teachers)
   end
 
-  def search(conn, _params) do
-    teachers = Teachers.list_teacher()
+  def search(conn, %{"filter" => filter}) do
+    teachers = Teachers.list_teacher(filter)
     render(conn, "index.html", teachers: teachers)
   end
 
