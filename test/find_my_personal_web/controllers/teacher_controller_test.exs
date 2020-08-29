@@ -43,7 +43,6 @@ defmodule FindMyPersonalWeb.TeacherControllerTest do
   end
 
   describe "create teacher" do
-
     test "renders form", %{conn: conn} do
       conn = get(conn, Routes.teacher_path(conn, :new))
       assert html_response(conn, 200) =~ "New Teacher"
