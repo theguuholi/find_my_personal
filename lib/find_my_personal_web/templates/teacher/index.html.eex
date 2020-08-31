@@ -3,11 +3,11 @@
     <h4>Instrutores</h4>
 
     <%= form_for @conn, Routes.teacher_path(@conn, :search), [class: "nav-wrapper", method: :get], fn f ->  %>
-      <div class="input-field">
-        <%= search_input f, :term, name: "filter", id: "search" %>
-        <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-        <i class="material-icons">close</i>
-      </div>
+    <div class="input-field">
+      <%= search_input f, :term, name: "filter", id: "search" %>
+      <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+      <i class="material-icons">close</i>
+    </div>
     <% end %>
   </li>
   <%= for teacher <- @teachers do %>
@@ -15,7 +15,9 @@
     <img src="<%= teacher.avatar_url %>" alt="" class="circle">
     <span class="title"><%= teacher.name %></span>
     <p><%= teacher.education_level %><br>
-      Second Line
+      <span class="badge blue white-text">
+        <%=
+       FindMyPersonal.Members.count_members_teacher(teacher.id) %> Alunos </span>
     </p>
     <div class="secondary-content">
       <%= link  to: Routes.teacher_path(@conn, :show, teacher) do %>
