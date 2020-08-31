@@ -17,7 +17,7 @@
     <p><%= teacher.education_level %><br>
       <span class="badge blue white-text">
         <%=
-       FindMyPersonal.Repo.preload(teacher, :members).members |> Enum.count() %> Alunos </span>
+       FindMyPersonal.Members.count_members_teacher(teacher.id) %> Alunos </span>
     </p>
     <div class="secondary-content">
       <%= link  to: Routes.teacher_path(@conn, :show, teacher) do %>
