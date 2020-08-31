@@ -4,8 +4,6 @@ defmodule FindMyPersonalWeb.MemberControllerTest do
   alias FindMyPersonal.Members
   import FindMyPersonal.MemberFixture
 
-
-
   def fixture(:member) do
     {:ok, member} = Members.create_member(valid_attrs())
     member
