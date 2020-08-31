@@ -8,6 +8,7 @@ defmodule FindMyPersonal.Teachers.Teacher do
     field :class_type, :string
     field :education_level, :string
     field :name, :string
+    has_many :members, FindMyPersonal.Members.Member
 
     timestamps()
   end
