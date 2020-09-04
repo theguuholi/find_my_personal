@@ -1,5 +1,6 @@
 defmodule FindMyPersonal.Members.Mail do
   import Bamboo.Email
+  alias FindMyPersonal.Mail.Mailer
   alias FindMyPersonal.Members.Member
 
   def created({:ok, %Member{} = member}) do
@@ -10,6 +11,6 @@ defmodule FindMyPersonal.Members.Mail do
       html_body: "<strong>Obrigado por confiar no nosso time!!!</strong>",
       text_body: "Obrigado!!"
     )
-    |> FindMyPersonal.Mail.Mailer.deliver_now()
+    |> Mailer.deliver_now()
   end
 end

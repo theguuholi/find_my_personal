@@ -15,6 +15,7 @@ defmodule FindMyPersonalWeb.Api.TeacherView do
     teacher = teacher |> Repo.preload(:members)
     members = teacher.members
     total_members = members |> Enum.count()
+
     %{
       id: teacher.id,
       avatar_url: teacher.avatar_url,
