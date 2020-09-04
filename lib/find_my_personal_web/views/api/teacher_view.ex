@@ -23,8 +23,13 @@ defmodule FindMyPersonalWeb.Api.TeacherView do
       birth_date: teacher.birth_date,
       education_level: teacher.education_level,
       class_type: teacher.class_type,
+<<<<<<< HEAD
       total_members: total_members,
       members: MemberView.render("index.json", members: members)
+=======
+      members: MemberView.render("index.json", members: members),
+      total_members: total_members
+>>>>>>> feature/member_personal
     }
   end
 end
