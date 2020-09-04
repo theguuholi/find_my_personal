@@ -71,11 +71,14 @@ defmodule FindMyPersonal.Members do
   def create_member(attrs \\ %{}) do
     %{"teacher_id" => teacher_id} = attrs
 
-    teacher_id
+    member = teacher_id
     |> Teachers.get_teacher!()
     |> Ecto.build_assoc(:members)
     |> Member.changeset(attrs)
     |> Repo.insert()
+
+    FindMyPersonal.Members.Mail.created(member)
+    member
   end
 
   @doc """

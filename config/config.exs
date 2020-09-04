@@ -34,11 +34,15 @@ config :find_my_personal, FindMyPersonal.Mail.Mailer,
   username: "d29d8a4def7277",
   password: "pa51413c97c4aec695word",
   tls: :if_available,
-  allowed_tls_versions: [:"tlsv1", :"tlsv1.1", :"tlsv1.2"],
+  allowed_tls_versions: [:tlsv1, :"tlsv1.1", :"tlsv1.2"],
   ssl: false,
   retries: 1,
   no_mx_lookups: false,
-  auth: :if_available
+  auth: :cram_md5
+
+config :find_my_personal, FindMyPersonal.Mail.Mailer,
+  adapter: Bamboo.MandrillAdapter,
+  api_key: "find_my_personal"
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.

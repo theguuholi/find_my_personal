@@ -1,3 +1,15 @@
 defmodule FindMyPersonal.Members.Mail do
   import Bamboo.Email
+  alias FindMyPersonal.Members.Member
+
+  def created({:ok, %Member{} = member}) do
+    new_email(
+      to: member.email,
+      from: "g.92oliveira@gmail.com",
+      subject: "Bem vindo a Academia!! #{member.name}",
+      html_body: "<strong>Obrigado por confiar no nosso time!!!</strong>",
+      text_body: "Obrigado!!"
+    )
+    |> FindMyPersonal.Mail.Mailer.deliver_now()
+  end
 end
