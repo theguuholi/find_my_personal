@@ -6,6 +6,7 @@ defmodule FindMyPersonal.Members do
   import Ecto.Query, only: [from: 2]
   alias FindMyPersonal.Repo
 
+  alias FindMyPersonal.Members.Mail
   alias FindMyPersonal.Members.Member
   alias FindMyPersonal.Teachers
 
@@ -71,11 +72,15 @@ defmodule FindMyPersonal.Members do
   def create_member(attrs \\ %{}) do
     %{"teacher_id" => teacher_id} = attrs
 
-    teacher_id
-    |> Teachers.get_teacher!()
-    |> Ecto.build_assoc(:members)
-    |> Member.changeset(attrs)
-    |> Repo.insert()
+    member =
+      teacher_id
+      |> Teachers.get_teacher!()
+      |> Ecto.build_assoc(:members)
+      |> Member.changeset(attrs)
+      |> Repo.insert()
+
+    Mail.created(member)
+    member
   end
 
   @doc """
