@@ -27,7 +27,7 @@ config :logger, :console,
 config :phoenix, :json_library, Jason
 
 config :find_my_personal, FindMyPersonal.Mail.Mailer,
-adapter: Bamboo.SMTPAdapter,
+  adapter: Bamboo.SMTPAdapter,
   server: System.get_env("SERVER_HOST_MAIL"),
   hostname: System.get_env("SERVER_HOST_MAIL"),
   port: System.get_env("PORT_MAIL"),
