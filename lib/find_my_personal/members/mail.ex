@@ -13,4 +13,6 @@ defmodule FindMyPersonal.Members.Mail do
     )
     |> Mailer.deliver_now()
   end
+
+  def created({:error, _error}), do: nil
 end
