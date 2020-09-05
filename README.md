@@ -24,6 +24,10 @@ To start your Phoenix server Container-Prod:
   * run `docker run --env-file .env -p 8082:4000 IMAGE_NAME:TAG`
 
 
+## Testing APIS using INSOMNIA
+
+[find_my_personal_insomnia.json](Workspace Insomnia)
+
 
 ## Learn more
 
