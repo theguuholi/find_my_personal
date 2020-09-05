@@ -1,5 +1,10 @@
 # FindMyPersonal
 
+[![Build Status](https://travis-ci.com/theguuholi/find_my_personal.svg?branch=master)](https://travis-ci.com/theguuholi/find_my_personal)
+
+[![codecov](https://codecov.io/gh/theguuholi/find_my_personal/branch/master/graph/badge.svg)](https://codecov.io/gh/theguuholi/find_my_personal)
+
+
 To start your Phoenix server:
 
   * Install dependencies with `mix deps.get`
